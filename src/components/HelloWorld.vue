@@ -3,17 +3,12 @@
     <div class="row">
       <div class="col-md-6 d-flex justify-content-center">
         <div class="card" style="width: 18rem;">
-          <img
-            :src="image_url || require(`@/assets/logo.png`)"
-            class="card-img-top"
-          />
+          <img :src="this.image_url || require(`@/assets/logo.png`)" class="card-img-top" />
           <div class="card-body">
             <h5
               class="card-title text-center"
-              :style="{ fontSize: font_size + 'px' }"
-            >
-              {{ title || "Заголовок" }}
-            </h5>
+              :style="{ fontSize: this.font_size + 'px' }"
+            >{{ this.title || "Заголовок" }}</h5>
           </div>
         </div>
       </div>
@@ -48,13 +43,19 @@
 <script>
 export default {
   name: "HelloWorld",
-  props: {},
-  data() {
-    return {
-      title: "Menu",
-      font_size: 20,
-      image_url: "http://1001goroskop.ru/img/gadanie/derevo_zh/_derevo.jpg",
-    };
+  props: {
+    title: {
+      type: String,
+      default: "Menu",
+    },
+    font_size: {
+      type: Number,
+      default: 20,
+    },
+    image_url: {
+      type: String,
+      degault: "http://1001goroskop.ru/img/gadanie/derevo_zh/_derevo.jpg",
+    },
   },
 };
 </script>
