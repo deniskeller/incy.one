@@ -3,12 +3,12 @@
     <div class="row">
       <div class="col-md-6 d-flex justify-content-center">
         <div class="card" style="width: 18rem;">
-          <img :src="this.image_url || require(`@/assets/logo.png`)" class="card-img-top" />
+          <img :src="new_image_url || require(`@/assets/logo.png`)" class="card-img-top" />
           <div class="card-body">
             <h5
               class="card-title text-center"
-              :style="{ fontSize: this.font_size + 'px' }"
-            >{{ this.title || "Заголовок" }}</h5>
+              :style="{ fontSize: new_font_size + 'px' }"
+            >{{ new_title || "Заголовок" }}</h5>
           </div>
         </div>
       </div>
@@ -18,7 +18,7 @@
             <label for="formGroupExampleInput">title</label>
             <input
               type="text"
-              v-model.trim="title"
+              v-model.trim="new_title"
               class="form-control"
               id="formGroupExampleInput"
               placeholder="Введите название загловка"
@@ -28,7 +28,7 @@
             <label for="formGroupExampleInput2">font size</label>
             <input
               type="number"
-              v-model.trim="font_size"
+              v-model.trim="new_font_size"
               class="form-control"
               id="formGroupExampleInput2"
               placeholder="Введите размер шрифта"
@@ -57,6 +57,14 @@ export default {
       degault: "",
     },
   },
+  data() {
+    return {
+      new_title: this.title,
+      new_font_size: this.font_size,
+      new_image_url: this.image_url,
+    };
+  },
+  computed: {},
 };
 </script>
 

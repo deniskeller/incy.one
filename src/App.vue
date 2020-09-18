@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <HelloWorld :title="title" :font_size="font_size" :image_url="image_url" />
+    <HelloWorld :title="title" :font_size="font_size" :image_url="image_url" />
   </div>
 </template>
 
