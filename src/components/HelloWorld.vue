@@ -54,7 +54,7 @@ export default {
     },
     image_url: {
       type: String,
-      degault: "http://1001goroskop.ru/img/gadanie/derevo_zh/_derevo.jpg",
+      degault: "",
     },
   },
 };
